@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
-import { Router, Route, Switch } from "react-router-dom"
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { createBrowserHistory } from "history"
-import { Button, Container, Typography, SwipeableDrawer } from '@material-ui/core'
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { Container, Typography } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
  heroContent: {
@@ -10,15 +8,16 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Homepage() {
+export default function Homepage({ Categories }) {
  const classes = useStyles();  
+
   return (
     <div>
       <Container maxWidth="sm" component="main" className={classes.heroContent}>
         <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
           Homepage
         </Typography>
-      </Container>
+      </Container>      
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import CONSTANT from '../../constant.js';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { Link, AppBar, IconButton, Button, Typography, Toolbar }from '@material-ui/core';
+import { Link, AppBar, IconButton, Typography, Toolbar }from '@material-ui/core';
 import Drawer from '../Drawer/Drawer'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -20,15 +20,16 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function ButtonAppBar() {
+export default function Header({ Categories }) {
+
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>    	
+    <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <Drawer />
+            <Drawer Categories={Categories}/>
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             {CONSTANT.WEBSITE_NAME}
